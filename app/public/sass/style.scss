@@ -1,0 +1,46 @@
+@import 'partials/colors';
+
+body {
+    background: url(../imgs/bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.to-right {
+    float: right !important;
+}
+
+.title-form {
+    text-align: center
+}
+
+.link-options {
+    color: #fff;
+    &:hover, &:active {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+#login-section {
+    height: 100vh;
+    padding: 0px !important;
+    #data-holder {
+        background: $bgForm;
+        height: 100%;
+        float: left;
+        #form-login {
+            width: 300px;
+            height: auto;
+            position: relative;
+            margin: 25% auto;
+            padding: 5px;
+            background: #fff;
+            border-top: darken($color: $schoolColor, $amount: 4) solid 5px;
+            .btn-holder {
+                position: relative;
+                overflow: auto;
+                height: auto;
+            }
+        }
+    }
+}

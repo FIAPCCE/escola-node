@@ -1,0 +1,19 @@
+include partials/_header.pug
+section(id="login-section", class="col-md-12")
+    div(id="data-holder", class="col-md-6")
+        div(id="form-login")
+            div(class="col-md-12 title-form")
+                p Informe o seus dados de acesso
+            form(action="/login", method="post")
+                div(class="form-group")
+                    div(class="col-md-12")
+                        input(type="text", name="rm", class="form-control", placeholder="RM")
+                        br
+                    div(class="col-md-12")
+                        input(type="password", name="pass", class="form-control", placeholder="Senha")
+                    div(class="col-md-12")
+                    div(class="col-md-12 btn-holder")
+                        br
+                        button(class="btn btn-primary to-right") LOGIN
+
+include partials/_footer.pug

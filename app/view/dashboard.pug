@@ -1,0 +1,13 @@
+include partials/_header.pug
+
+section(id="dashboard-section", class="col-md-12")
+    div(class="container")
+        div(id="dashboard-content")
+            div(class="row")
+                h2 Selecione uma opção:
+                div(class="col-md-6")
+                    a(href="#", class="btn btn-primary") Listagem de cursos
+                div(class="col-md-6")
+                    a(href="/curso/novo", class="btn btn-primary") Novo Curso
+
+include partials/_footer.pug

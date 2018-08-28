@@ -4,7 +4,9 @@ section(id="login-section", class="col-md-12")
         div(id="form-login")
             div(class="col-md-12 title-form")
                 p Informe o seus dados de acesso
-            form(action="/login", method="post")
+                if (typeof(error) !== 'undefined')
+                    p(class="alert alert-danger") #{error}
+            form(action="/", method="post")
                 div(class="form-group")
                     div(class="col-md-12")
                         input(type="text", name="rm", class="form-control", placeholder="RM")

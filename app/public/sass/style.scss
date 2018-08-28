@@ -44,3 +44,30 @@ body {
         }
     }
 }
+
+#dashboard-content {
+    background: #fff;
+    padding: 10px;
+    max-width: 600px;
+    margin: 15vh auto;
+    border-top: darken($color: $schoolColor, $amount: 4) solid 5px;
+    .row {
+        a {
+            text-align: center;
+            display: block
+        }
+        h2 {
+            font-size: 15px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+form {
+    textarea {
+        height: 150px !important;
+        resize: none;
+    }
+}

@@ -6,11 +6,11 @@ module.exports = (app) => {
     app.get('/', (req, res) => res.render('index'));
     app.post('/', (req, res) => aluno.login(res, req.body));
 
-    // dashboard
-    app.get('/dashboard', (req, res) => res.render('dashboard'));
-
     // novo cadastro
     app.get('/cadastro', (req, res) => res.render('novo-usuario'));
+
+    // dashboard
+    app.get('/dashboard', (req, res) => res.render('dashboard'));
 
     // curso
     app.get('/curso/novo', (req, res) => res.render('novo-curso'));

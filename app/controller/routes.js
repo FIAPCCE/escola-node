@@ -9,6 +9,9 @@ module.exports = (app) => {
     // dashboard
     app.get('/dashboard', (req, res) => res.render('dashboard'));
 
+    // novo cadastro
+    app.get('/cadastro', (req, res) => res.render('novo-usuario'));
+
     // curso
     app.get('/curso/novo', (req, res) => res.render('novo-curso'));
     app.post('/curso/novo', (req, res) => curso.novo(res, req.body));

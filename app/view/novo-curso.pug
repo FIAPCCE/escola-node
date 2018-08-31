@@ -1,25 +1,25 @@
-include partials/_header.pug
+include partials/_header
 
 section(id="dashboard-section", class="col-md-12")
-    div(class="container")
-        div(id="dashboard-content")
-            div(class="row")
-                h2 Informe as informações do curso:
-                form(action="?", method="post", class="col-md-12")
-                    div(class="form-group")
-                        input(type="text", class="form-control", placeholder="Nome do curso")
-                    div(class="form-group")
-                        input(type="number", class="form-control", placeholder="Carga Horaria")
-                    div(class="form-group")
-                        select(name="categoria", class="form-control")
-                            option(value="") Selecione uma categoria
-                            option(value="Desenvolvimento") Desenvolvimento
-                            option(value="Design") Design
-                            option(value="Infraestrutura") Infraestrutura
-                            option(value="Adminstração e Negócios") Adminstração e Negócios
-                    div(class="form-group")
-                        textarea(name="descricao", class="form-control", placeholder="Descição do curso")
-                    div(class="form-group")
-                        button(class="btn btn-primary to-right") Novo Curso
+    div(class="row")
+        include partials/_menu
+        div(class="col-md-10")
+            h3 Informe as informações do curso:
+            form(action="?", method="post")
+                div(class="form-group")
+                    input(type="text", class="form-control", placeholder="Nome do curso")
+                div(class="form-group")
+                    input(type="number", class="form-control", placeholder="Carga Horaria")
+                div(class="form-group")
+                    select(name="categoria", class="form-control")
+                        option(value="") Selecione uma categoria
+                        option(value="Desenvolvimento") Desenvolvimento
+                        option(value="Design") Design
+                        option(value="Infraestrutura") Infraestrutura
+                        option(value="Adminstração e Negócios") Adminstração e Negócios
+                div(class="form-group")
+                    textarea(name="descricao", class="form-control", placeholder="Descição do curso")
+                div(class="form-group")
+                    button(class="btn btn-primary to-right") Novo Curso
 
 include partials/_footer.pug

@@ -4,19 +4,16 @@ section(id="login-section", class="col-md-12")
         div(id="form-login")
             div(class="col-md-12 title-form")
                 p Informe o seus dados de acesso
-                if (typeof(error) !== 'undefined')
+                if (typeof(error) !== 'undefined') 
                     p(class="alert alert-danger") #{error}
+            
             form(action="/", method="post")
-                div(class="form-group")
-                    div(class="col-md-12")
-                        input(type="text", name="rm", class="form-control", placeholder="RM")
-                        br
-                    div(class="col-md-12")
+                div(class="container")
+                    div(class="form-group")
+                        input(type="text", name="email", class="form-control", placeholder="Email")
+                    div(class="form-group")
                         input(type="password", name="pass", class="form-control", placeholder="Senha")
                         a(href="/cadastro") novo cadastro
-                    div(class="col-md-12")
-                    div(class="col-md-12 btn-holder")
-                        br
+                    div(class="form-group btn-holder")
                         button(class="btn btn-primary to-right") LOGIN
-
 include partials/_footer.pug

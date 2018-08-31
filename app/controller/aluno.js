@@ -24,5 +24,12 @@ module.exports = (app) => {
         })
     }
 
+    object.cadastro = function (req, dados) {
+        const usuario = new Aluno(dados);
+        usuario.save();
+
+        req.redirect('/');
+    }
+
     return object;
 }

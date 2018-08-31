@@ -1,8 +1,7 @@
 @import 'partials/colors';
 
 body {
-    background: url(../imgs/bg.jpg) no-repeat;
-    background-size: cover;
+    background: #f1f1f1;
 }
 
 .to-right {
@@ -22,6 +21,8 @@ body {
 }
 
 #login-section {
+    background: url(../imgs/bg.jpg) no-repeat;
+    background-size: cover;
     height: 100vh;
     padding: 0px !important;
     #data-holder {
@@ -69,5 +70,37 @@ form {
     textarea {
         height: 150px !important;
         resize: none;
+    }
+    .form-group {
+        display: block;
+        height: auto;
+        overflow: auto;
+    }
+}
+
+#menu-dashboard {
+    background: #23282d;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    max-width: 200px;
+    ul {
+        padding: 0px;
+        li {
+            color: lighten(#444, 30) ;
+            list-style: none;
+            padding: 5px;
+            display: block;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            &:hover {
+                background: $bgForm;
+                color: lighten(#444, 30);
+            }
+            a, a:hover, a:active {
+                color: lighten(#444, 30);
+                text-decoration: none
+            }
+        }
     }
 }

@@ -4,11 +4,9 @@ module.exports = (app) => {
 
     const Schema = mongoose.Schema;
     const Aluno = new Schema({
-        rm: { type: Number },
         nome: { type: String },
-        pass: { type: String },
         email: { type: String },
-        curso: { type: String }
+        pass: { type: String }
     });
 
     return mongoose.model('Aluno', Aluno);

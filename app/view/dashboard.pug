@@ -14,15 +14,11 @@ section(id="dashboard-section", class="col-md-12")
                         th(scope="col") descricao
                         th(scope="col") categoria
                 tbody
-                    tr
-                        th(scope="row") 1
-                        td Um curso legal
-                        td Descricao do curso legal!
-                        td Desenvolvimento
-                    tr
-                        th(scope="row") 1
-                        td Um curso legal 2
-                        td Descricao do curso legal!
-                        td Desenvolvimento
+                    each curso in cursos
+                        tr
+                            th(scope="row")= curso.ch
+                            td= curso.nome
+                            td= curso.descricao
+                            td= curso.categoria
 
 include partials/_footer

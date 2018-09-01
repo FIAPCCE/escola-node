@@ -7,7 +7,7 @@
   "license": "MIT",
   "engines": {
     "node": "v8.11.2"
-  }
+  },
   "scripts": {
     "dev": "webpack --watch --mode=development",
     "build": "webpack --mode=production",

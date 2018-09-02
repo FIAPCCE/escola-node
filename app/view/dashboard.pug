@@ -6,19 +6,25 @@ section(id="dashboard-section", class="col-md-12")
         
         div(class="col-md-10")
             h3 Listagem dos cursos
-            table(class="table table-striped")
-                thead(class="thead")
-                    tr
-                        th(scope="col") ch
-                        th(scope="col") nome
-                        th(scope="col") descricao
-                        th(scope="col") categoria
-                tbody
-                    each curso in cursos
+            if (cursos.length > 0)
+                table(class="table table-striped")
+                    thead(class="thead")
                         tr
-                            th(scope="row")= curso.ch
-                            td= curso.nome
-                            td= curso.descricao
-                            td= curso.categoria
+                            th(scope="col") ch
+                            th(scope="col") nome
+                            th(scope="col") descricao
+                            th(scope="col") categoria
+                    tbody
+                        each curso in cursos
+                            tr
+                                th(scope="row")= curso.ch
+                                td= curso.nome
+                                td= curso.descricao
+                                td= curso.categoria
+            else
+                div(class="alert alert-warning", role="alert")
+                    h3 Nenhum curso cadastrdado!
+                    p Por favor, cadastre um novo curso
+                    a(href="/novo-curso") Novo Curso
 
 include partials/_footer

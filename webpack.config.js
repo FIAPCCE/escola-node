@@ -28,7 +28,6 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|ttf|svg|eot|jpg)/,
-                exclude: /node_modules/,
                 use: {
                     loader: 'url-loader',
                     options: {limit: 8000}

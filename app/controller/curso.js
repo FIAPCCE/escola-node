@@ -23,5 +23,12 @@ module.exports = (app) => {
         res.render('cadastro-resposta', { elemento: 'Curso'});
     }
 
+    object.get = function (req, res) {
+        const curso = Curso.findOne({ '_id': req.params.id });
+        curso.exec()
+        .then(curso => res.render('curso', { curso, title: curso.nome}))
+        .catch(err => res.redirect('/dashboard'));
+    }
+
     return object;
 }

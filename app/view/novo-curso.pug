@@ -1,10 +1,11 @@
 include partials/_header
-
+include partials/_menu-top
 section(id="dashboard-section", class="col-md-12")
     div(class="row")
         include partials/_menu
         div(class="col-md-10")
-            h3 Informe as informações do curso:
+            h3 Novo Curso
+            p Cadatsre os dados para um novo curso
             form(action="?", method="post")
                 div(class="form-group")
                     input(type="text", name="nome", class="form-control", placeholder="Nome do curso")
@@ -21,5 +22,5 @@ section(id="dashboard-section", class="col-md-12")
                     textarea(name="descricao", class="form-control", placeholder="Descição do curso")
                 div(class="form-group")
                     button(class="btn btn-primary to-right") Novo Curso
-
+                    
 include partials/_footer.pug

@@ -14,11 +14,13 @@ module.exports = (app) => {
     app.get('/dashboard', (req, res) => curso.index(res));
 
     // curso
-    app.get('/novo-curso', (req, res) => res.render('novo-curso', { title: 'Novo Curso' }));
-    app.post('/novo-curso', (req, res) => curso.novo(res, req.body));
+    app.get('/curso/novo', (req, res) => res.render('novo-curso', { title: 'Novo Curso' }));
+    app.post('/curso/novo', (req, res) => curso.novo(res, req.body));
+    app.get('/curso/:id', (req, res) => curso.get(req, res));
+    app.get('/curso/', (req, res) => curso.index(res));
 
     // resposta de cadastro
-    app.get('/novo-curso/cadastrado', (req, res) => curso.resposta(res));
+    app.get('/novo-curso/cadastrado', (res, req) => curso.resposta(res, req));
 
     return this;
 }

@@ -22,4 +22,4 @@ loader('model',{cwd: './app'})
     .into(app);
 
 // inicia o servidor
-app.listen('3000', (req, res) => console.log('App escola: http://localhost:3000'));
+app.listen(process.env.PORT || 3000, (req, res) => console.log('App escola: http://localhost:3000'));

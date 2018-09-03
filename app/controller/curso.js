@@ -6,7 +6,7 @@ module.exports = (app) => {
         const curso = new Curso(dados);
         curso.save();
 
-        req.redirect('/novo-curso/cadastrado');
+        req.redirect('/curso/cadastrado');
     }
 
     object.index = function (res) {
@@ -19,7 +19,7 @@ module.exports = (app) => {
         .catch(err => console.log(err));
     }
 
-    object.resposta = function (res) {
+    object.resposta = function (req, res) {
         res.render('cadastro-resposta', { elemento: 'Curso'});
     }
 

@@ -10,6 +10,9 @@
     "build": "webpack --mode=production",
     "start": "node node_modules/nodemon/bin/nodemon app"
   },
+  "engines": {
+    "node": "8.11.4"
+  },
   "dependencies": {
     "@babel/core": "^7.0.0-rc.3",
     "@babel/preset-env": "^7.0.0-rc.3",

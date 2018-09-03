@@ -20,7 +20,7 @@ module.exports = (app) => {
     app.get('/curso/', (req, res) => curso.index(res));
 
     // resposta de cadastro
-    app.get('/novo-curso/cadastrado', (res, req) => curso.resposta(res, req));
+    app.get('/curso/cadastrado', (req, res) => curso.resposta(req, res));
 
     return this;
 }

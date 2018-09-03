@@ -61,6 +61,4 @@ typings/
 .next
 
 # Pasta dist
-app/public/dist
-
 yarn.lock

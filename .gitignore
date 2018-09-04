@@ -62,3 +62,5 @@ typings/
 
 # Pasta dist
 yarn.lock
+
+app/public/dist

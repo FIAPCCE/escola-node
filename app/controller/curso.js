@@ -36,7 +36,7 @@ module.exports = (app) => {
         const curso = Curso.findOne({ '_id': req.params.id });
         curso.exec()
         .then(curso => res.render('curso', { curso, title: curso.nome}))
-        .catch(err => res.redirect('/dashboard'));
+        .catch(err => res.redirect('/curso'));
     }
 
     return object;

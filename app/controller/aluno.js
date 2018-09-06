@@ -14,7 +14,7 @@ module.exports = (app) => {
             }
 
             Session.set(req, aluno._id);
-            res.redirect('/dashboard');
+            res.redirect('/curso');
         })
     }
 

@@ -3,24 +3,18 @@ const cookie = require('cookie-session');
 module.exports = (app) => {
     const object = {};
     const Aluno = app.model.aluno;
+    const Session = app.middleware.session;
     
-    object.login = function (req, dados) {
+    object.login = function (req, res, dados) {
         let busca = Aluno.findOne({'rm': dados.rm, 'pass': dados.pass});
         busca.exec((err, aluno) => {
             if (err || aluno === null) {
-                req.render('index', { error: 'Usuario não encontrado!' });
+                res.render('index', { error: 'Usuario não encontrado!' });
                 return false;
             }
 
-            app.use(cookie({
-                name: 'sessionTest',
-                keys: ['hhueeh', 'irineu'],
-                maxAge: 24 * 60 * 60 * 1000
-            }));
-
-            console.log(req.cookies);
-
-            req.redirect('/dashboard');
+            Session.set(req, aluno._id);
+            res.redirect('/dashboard');
         })
     }
 
@@ -29,6 +23,17 @@ module.exports = (app) => {
         usuario.save();
 
         req.redirect('/');
+    }
+
+    object.logout = function (req, res) {
+        req.session.destroy(err => {
+            if (err) {
+                console.log(err);
+                return false;
+            }
+
+            res.redirect('/');
+        });
     }
 
     return object;

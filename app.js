@@ -1,7 +1,8 @@
 const express = require('express'),
-app = express(),
 loader = require('express-load'),
-bodyParser = require('body-parser');
+bodyParser = require('body-parser'),
+session = require('express-session'),
+app = express();
 
 /**
  * Express
@@ -9,6 +10,13 @@ bodyParser = require('body-parser');
 
 app.set('view engine', 'pug');
 app.set('views', './app/view');
+
+app.use(session({ 
+    secret: 'token',
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.use(express.static('./app/public'));
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -18,8 +26,10 @@ app.use(bodyParser.json());
  * Autoload com o express-loader
  */
 loader('model',{cwd: './app'})
+    .then('middleware')
     .then('controller')
     .into(app);
 
 // inicia o servidor
-app.listen(process.env.PORT || 3000, (req, res) => console.log('App escola: http://localhost:3000'));
+const port = process.env.PORT || 3000;
+app.listen(port, (req, res) => console.log(`App escola: http://localhost:${port}`));

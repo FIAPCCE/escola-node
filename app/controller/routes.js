@@ -25,5 +25,8 @@ module.exports = (app) => {
     // Logout
     app.get('/logout', (req, res) => aluno.logout(req, res));
 
+    // 404
+    app.get('*', (req, res) => res.redirect('/'));
+
     return this;
 }
